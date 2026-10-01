@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Aprobado por Chayanne",
+  "version": "1.0.0",
+  "description": "Celebrates every GitHub merge with the 'Aprobado por Chayanne' meme.",
+  "action": {
+    "default_title": "Probar: Aprobado por Chayanne"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}
